@@ -33,7 +33,7 @@ tl.from(".card h1", {
   scrollTrigger: {
     trigger: ".card h1",
         scroll: "body",
-        markers: true,
+        // markers: true,
         start: "",
         end: "top 10%",
         scrub: 2,
@@ -48,5 +48,21 @@ tl.to(".project-card", {
     end: "top -200%",
     scrub: 0,
     pin: true
+  }
+})
+
+
+tl.from(".left-con h1", {
+  x: -200,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.3,
+  scrollTrigger: {
+    trigger: ".left-con",
+        scroll: "body",
+        // markers: true,
+        start: "",
+        end: "top 10%",
+        scrub: 2,
   }
 })

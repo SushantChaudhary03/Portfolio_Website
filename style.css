@@ -44,7 +44,40 @@ body {
     font-size: 2rem;
     font-family: monospace;
     list-style: none;
-    font-weight: 900;
+    font-weight: 500;
+    background-color: transparent;
+    width: fit-content;
+    border: 2px solid rgba(252, 252, 252, 0.563);
+    width: 11rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.list li::after{
+    content: "";
+    position: absolute;
+    bottom: -4.2rem;
+    width: 12rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: white;
+    z-index: -1;
+    transition: all ease 0.5s;
+}
+
+.list li:hover::after{
+    bottom: 0;
+    border-radius: 20px;
+}
+
+.list li:hover{
+    color: black;
 }
 
 #page-1 {
@@ -112,6 +145,18 @@ body {
     font-weight: 400;
 }
 
+.social-media button{
+    width: 12rem;
+    height: 4rem;
+    border-radius: 5px;
+    background-color: rgb(148, 10, 10);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 #page-2 {
     height: 100vh;
 }
@@ -171,6 +216,7 @@ body {
     background-color: green;
     width: 35vw;
     height: 35vw;
+    position: relative;
     border-radius: 20px;
 }
 
@@ -207,6 +253,7 @@ body {
     object-fit: cover;
 }
 
+
 .project-card:nth-child(3){
     background-image: url(https://imgs.search.brave.com/X_6kEReGeZP3g8iPysvLNZ_FqxyZAR50orMbyCIeRkI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzgwLzI1Lzcz/LzM2MF9GXzU4MDI1/NzM1NV9lTmo1amtH/MGdhVWRMb21UOE01/enA3SkVrckQ2UWh3/dC5qcGc);
     object-fit: cover;
@@ -218,6 +265,46 @@ body {
 
 .project-card:nth-child(5){
     background-image: url(https://imgs.search.brave.com/yJaU9PtOK5VvYDWs_FrrpWeMwWP6w6QgvLS6Vl10CMc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9ibG9n/Lmh1YnNwb3QuY29t/L2h1YmZzL2xhbmRp/bmctcGFnZS53ZWJw);
+}
+
+.card-info{
+    width: 100%;
+    height: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: all ease 0.3s;
+    overflow: hidden;
+}
+
+.card-info p{
+    padding: 2rem;
+    font-family: serif;
+    font-size: 1.8rem;
+    color: black;
+    display: none;
+}
+
+.project-card:hover .card-info{
+    height: 40%;
+}
+
+.project-card:hover .card-info p{
+    display: block;
+}
+
+.project-card a img{
+    padding: 0.5rem;
+    width: 4rem;
+    position: absolute;
+    right: 0;
 }
 
 #page-4{
@@ -288,6 +375,7 @@ body {
     left: 16rem;
 }
 
+
 /* .circle{
     position: absolute;
     top: 25%;
@@ -298,10 +386,108 @@ body {
     background-color: blue;
 } */
 
-#page-5{
+/* #page-5{
+    background-color: rgb(3, 86, 158);
+} */
+
+.contact{
+    width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12rem;
 }
 
+.left-con{
+    width: 40vw;
+    height: 40vw;
+    color: white;
+    padding-top: 5rem;
+}
+
+.left-con h1{
+    font-size: 9rem;
+}
+
+.link{
+    margin-top: 4rem;
+}
+
+.link svg{
+    width: 5rem;
+    padding-left: 4rem;
+    transition: all ease 0.3s;
+}
+
+.link svg:hover{
+    scale: 1.2;
+}
+
+.right-con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+    height: 40vw;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.right-con h2{
+    color: white;
+    font-size: 5rem;
+}
+
+.right-con input{
+    display: block;
+    margin: 3rem 0rem;
+    padding: 1rem;
+    width: 22vw;
+    height: 3rem;
+    border-radius: 8px;
+    outline: 1px solid white;
+    color: white;
+    background-color: transparent;
+    font-size: 1.8rem;
+    border: none;
+}
+
+.right-con input::placeholder{
+    color: white;
+}
+
+.right-con textarea{
+    display: block;
+    padding: 1rem;
+    width: 22vw;
+    border-radius: 8px;
+    background-color: transparent;
+    outline: 1px solid white;
+    color: white;
+}
+
+.right-con textarea::placeholder{
+    color: white;
+}
+
+.right-con button{
+    width: 32.5rem;
+    height: 4rem;
+    margin-top: 3rem;
+    border-radius: 5px;
+    background-color: #29832c;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+}
+
+.right-con button:hover{
+    background-color: #217c24;
+}
 
 @media screen and (max-width: 1024px) {
     html {
