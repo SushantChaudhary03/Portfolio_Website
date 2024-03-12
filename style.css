@@ -9,6 +9,19 @@ html {
     font-size: 10px;
 }
 
+.cursor {
+    position: fixed;
+    z-index: 9;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    filter: blur(1px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: transform 0.6s ease;
+}
+
 .nav {
     position: relative;
     display: flex;
@@ -87,17 +100,19 @@ main{
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     position: relative;
 }
 
 .profile {
     overflow: hidden;
+    padding-left: 6rem;
 }
 
 .profile h1 {
+    text-transform: uppercase;
     color: white;
-    font-size: 35rem;
+    font-size: 52rem;
     white-space: nowrap;
     font-family: sans-serif;
     font-weight: 950;
@@ -496,7 +511,7 @@ footer{
 
 .footer{
     background-color: black;
-    width: 100%;
+    width: 87vw;
     height: 40vh;
     margin-top: 15rem;
     padding: 4rem;
