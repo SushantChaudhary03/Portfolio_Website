@@ -1,16 +1,13 @@
 const lenis = new Lenis()
 
-lenis.on('scroll', (e) => {
-  console.log(e)
-})
-
 lenis.on('scroll', ScrollTrigger.update)
 
-gsap.ticker.add((time)=>{
+gsap.ticker.add((time) => {
   lenis.raf(time * 1000)
 })
 
 gsap.ticker.lagSmoothing(0)
+
 
 var tl = gsap.timeline();
 
@@ -32,11 +29,11 @@ tl.from(".card h1", {
   stagger: 0.3,
   scrollTrigger: {
     trigger: ".card h1",
-        scroll: "body",
-        // markers: true,
-        start: "",
-        end: "top 10%",
-        scrub: 2,
+    scroll: "body",
+    // markers: true,
+    start: "",
+    end: "top 10%",
+    scrub: 2,
   }
 })
 
@@ -59,10 +56,35 @@ tl.from(".left-con h1", {
   stagger: 0.3,
   scrollTrigger: {
     trigger: ".left-con",
-        scroll: "body",
-        // markers: true,
-        start: "",
-        end: "top 10%",
-        scrub: 2,
+    scroll: "body",
+    // markers: true,
+    start: "",
+    end: "top 10%",
+    scrub: 2,
   }
 })
+
+
+const blurEffect = ()=>{
+  document.querySelectorAll('.about h1').forEach(element => {
+    element.addEventListener('mouseover', () => {
+        document.querySelectorAll('.about h1').forEach(h1 => {
+            if (h1 !== element) {
+                h1.style.filter = 'blur(10px)';
+            } else {
+                h1.style.filter = 'blur(0)';
+            }
+        });
+    });
+  
+    element.addEventListener('mouseout', () => {
+        document.querySelectorAll('.about h1').forEach(h1 => {
+            h1.style.filter = 'none';
+        });
+    });
+  });
+}
+
+blurEffect();
+
+
