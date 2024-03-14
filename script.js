@@ -17,7 +17,7 @@ tl.to("#page-1 h1", {
     trigger: "#page-1",
     start: "top 0",
     end: "top -200%",
-    scrub: 2,
+    scrub: 3,
     pin: true
   }
 })
@@ -59,7 +59,7 @@ tl.from(".left-con h1", {
     scroll: "body",
     // markers: true,
     start: "",
-    end: "top 10%",
+    end: "top 30%",
     scrub: 2,
   }
 })
