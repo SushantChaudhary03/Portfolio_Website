@@ -33,6 +33,7 @@ html {
     height: 15vh;
     font-family: sans-serif;
     z-index: 1;
+    /* display: none; */
 }
 
 .logo {
@@ -40,6 +41,24 @@ html {
     font-size: 4rem;
     font-weight: 900;
     color: red;
+    position: relative;
+    z-index: 9;
+}
+
+#navBtn{
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    width: 15rem;
+    height: 8rem;
+    font-size: 4rem;
+    border: 4px solid white;
+    border-radius: 30px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1;
+    display: none;
 }
 
 .list {
@@ -123,8 +142,7 @@ main{
     top: 0;
     left: 32%;
     width: 40vw;
-    height: 85vh;
-    object-fit: contain;
+    object-fit: cover;
     z-index: 9;
 }
 
@@ -134,13 +152,15 @@ main{
 
 .social-media{
     /* background-color: red; */
+    height: 10vw;
+    width: 10vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
     gap: 20px;
-    bottom: -22px;
-    left: -30vw;
+    bottom: 10rem;
+    left: -25vw;
 }
 
 .social-media svg{
@@ -156,9 +176,9 @@ main{
 
 .info{
     width: 12vw;
-    position: absolute;
+    position: relative;
     left: 52vw;
-    bottom: 10px;
+    bottom: 19rem;
 }
 
 .info p{
@@ -415,18 +435,19 @@ main{
 
 .skill-section-2{
     width: 90vw;
-    height: 280vh;
+    padding: 8rem 0rem;
     display: grid;
     justify-content: space-around;
     align-items: center;
     grid-template-columns: auto auto auto;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
+    gap: 5rem;
 }
 
 .my-skills{
-    width: 25vw;
-    height: 30vw;
+    width: 32rem;
+    height: 32vw;
     background-color: rgb(218, 255, 153);
     display: flex;
     flex-direction: column;
@@ -471,7 +492,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20vw;
+    width: 26rem;
     gap: 3rem;
 }
 
@@ -648,12 +669,12 @@ main{
 }
 
 
-footer{
+/* footer{
     z-index: -1;
     position: relative;
-}
+} */
 
-.footer{
+/* .footer{
     background-color: black;
     width: 87vw;
     height: 40vh;
@@ -662,16 +683,16 @@ footer{
     position: fixed;
     top: 25%;
     z-index: -1;
-}
+} */
 
-.content{
+/* .content{
     height: 32vh;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     gap: 4rem;
-}
+} */
 
 .content h1{
     color: white;
@@ -713,14 +734,130 @@ footer{
     background-color: transparent;
 }
 
+.nav-2{
+    width: 100%;
+    height: 34vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    position: fixed;
+    top: -35%;
+    z-index: 3;
+    transition: all ease 0.5s;
+    border-radius: 30px;
+    display: none;
+}
+
+.list-2{
+    margin-top: 8rem;
+    padding: 0rem 4rem;
+}
+
+.list-2 li{
+    font-size: 5rem;
+    list-style-type: none;
+    text-transform: uppercase;
+    padding: 1rem 4rem;
+    font-weight: 500;
+    text-align: end;
+}
+
+.nav-2 button{
+    position: absolute;
+    top: 8rem;
+    right: 8rem;
+    width: 10rem;
+    height: 6rem;
+    font-size: 3rem;
+}
+
+
 @media screen and (max-width: 1024px) {
     html {
         font-size: 8px;
     }
+
+    .nav{
+        display: none;
+    }
+
+
+    .profile{
+        margin-top: 20rem;
+    }
+
+    .image, .image img{
+        height: 80vw;
+        left: 22%;
+    }
+
+    .skill-section-2{
+        grid-template-columns: auto auto;
+        width: 85vw;
+    }
+
+    .social-media{
+        width: 10vw;
+        bottom: -25rem;
+        left: -6rem;
+    }
+
+    .social-media svg{
+        width: 8rem;
+    }
+
+    .social-media button{
+        width: 18rem;
+        height: 6rem;
+        font-size: 2.4rem;
+    }
+
+    .info{
+        width: 20vw;
+        bottom: -10rem;
+        font-size: 3rem;
+    }
+
+    .info p{
+        font-size: 4rem;
+    }
+
+    .my-skills{
+        width: 30vw;
+        height: 42vw;
+    }
+
+    .my-skills p{
+        font-size: 2rem;
+    }
 }
+
+
+
 
 @media screen and (max-width: 768px) {
     html {
         font-size: 6px;
+    }
+
+    .skill-section-2{
+        grid-template-columns: auto;
+        width: 80vw;
+        gap: 10rem;
+    }
+
+    .my-skills{
+        width: 45rem;
+        height: 70rem;
+    }
+
+    .my-skills h1{
+        font-size: 6rem;
+    }
+
+    .my-skills p{
+        font-size: 2.8rem;
     }
 }

@@ -139,3 +139,36 @@ function cursor() {
 cursor();
 
 
+let btn = document.querySelector("#navBtn");
+let nav = document.querySelector(".nav-2")
+let exit = document.querySelector("#exit")
+
+btn.addEventListener('click', ()=>{
+  nav.style.top = "-2%"
+})
+
+exit.addEventListener('click', ()=>{
+  nav.style.top = "-35%"
+})
+
+
+const about = document.querySelector('#page-2');
+const projects = document.querySelector('#page-3');
+const skills = document.querySelector('.skill-section-2');
+const contact = document.querySelector('.left-con');
+
+function scrollAbout(){
+  about.scrollIntoView()
+}
+
+function scrollProjects(){
+  projects.scrollIntoView()
+}
+
+function scrollSkills(){
+  skills.scrollIntoView()
+}
+
+function scrollContact(){
+  contact.scrollIntoView()
+}
